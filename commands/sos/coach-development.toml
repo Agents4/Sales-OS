@@ -1,0 +1,7 @@
+description = "Test whether a contact is a real Coach and plan how to develop one, including a second source of internal information. Use when the user says they have a cha..."
+prompt = """
+Activate and follow the Sales-OS skill `mh-coach-development` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

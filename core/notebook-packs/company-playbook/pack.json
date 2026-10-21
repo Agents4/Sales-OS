@@ -1,0 +1,7 @@
+{
+  "title": "Company playbook",
+  "description": "Compiled from workspace/context-library by `sos.py notebook-pack --company`. Template only.",
+  "dynamic": true,
+  "chat_instructions": "chat-instructions.txt",
+  "studio_prompts": "studio-prompts.md"
+}

@@ -1,0 +1,7 @@
+description = "Assess competitive position on one opportunity from the buyer's point of view, including the status quo and internal build, and plan counters per buying infl..."
+prompt = """
+Activate and follow the Sales-OS skill `mh-competitive-position` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

@@ -1,0 +1,7 @@
+description = "Scan a Blue Sheet, notes or transcript for red flags and silent risks, link each to an influence, and propose a dated, owned action. Use when the user asks w..."
+prompt = """
+Activate and follow the Sales-OS skill `mh-red-flag-scan` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

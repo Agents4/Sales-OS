@@ -1,0 +1,7 @@
+description = "Debrief a customer call from a transcript, recording summary or notes: result against plan, new facts, buyer Concept, mode and Win-Results changes, red flags..."
+prompt = """
+Activate and follow the Sales-OS skill `mh-call-debrief` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

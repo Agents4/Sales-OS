@@ -1,0 +1,7 @@
+description = "Build, update or review a Strategic Selling Blue Sheet for one B2B opportunity from notes, transcripts, CRM data or an interview. Use when the user wants an..."
+prompt = """
+Activate and follow the Sales-OS skill `mh-blue-sheet` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

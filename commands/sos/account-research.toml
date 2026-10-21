@@ -1,0 +1,7 @@
+description = "Research a target or existing account from public sources into a sourced brief: priorities, triggers, people, ICP fit and hypotheses to test. Use when the us..."
+prompt = """
+Activate and follow the Sales-OS skill `mh-account-research` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

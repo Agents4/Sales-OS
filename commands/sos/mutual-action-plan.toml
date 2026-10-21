@@ -1,0 +1,7 @@
+description = "Create a buyer-facing mutual action plan from the internal Blue Sheet, with a mandatory leak check so no internal analysis reaches the customer. Use when the..."
+prompt = """
+Activate and follow the Sales-OS skill `mh-mutual-action-plan` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

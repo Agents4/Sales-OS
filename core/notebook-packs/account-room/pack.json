@@ -1,0 +1,7 @@
+{
+  "title": "Account deal room",
+  "description": "Compiled from workspace/accounts/<account> by `sos.py notebook-pack --account <slug>`. Template only.",
+  "dynamic": true,
+  "chat_instructions": "chat-instructions.txt",
+  "studio_prompts": "studio-prompts.md"
+}

@@ -1,0 +1,7 @@
+description = "Orient a user to Sales-OS and route them to the right skill for their situation. Use when the user is new, asks what Sales-OS can do, says help, or describes..."
+prompt = """
+Activate and follow the Sales-OS skill `sos-start` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

@@ -1,0 +1,7 @@
+description = "Review a closed opportunity (won, lost or no-decision) by comparing what the Blue Sheet said with what happened, and extract lessons that change practice. Us..."
+prompt = """
+Activate and follow the Sales-OS skill `mh-win-loss-review` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

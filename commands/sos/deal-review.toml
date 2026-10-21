@@ -1,0 +1,7 @@
+description = "Challenge a deal against its Blue Sheet and the forecast hygiene gates, and give a green, amber or red verdict with the questions that would change it. Use w..."
+prompt = """
+Activate and follow the Sales-OS skill `mh-deal-review` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

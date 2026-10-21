@@ -1,0 +1,7 @@
+description = "Review a pipeline across many opportunities using Blue Sheets and CRM data: hygiene metrics, forecast gate challenges, funnel balance and the deals that need..."
+prompt = """
+Activate and follow the Sales-OS skill `mh-pipeline-review` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

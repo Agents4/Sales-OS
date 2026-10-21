@@ -1,0 +1,7 @@
+description = "Draft buyer-facing messages (cold or warm outreach, follow-ups, executive notes, meeting requests) grounded in the buyer's Concept and the user's voice, with..."
+prompt = """
+Activate and follow the Sales-OS skill `mh-outreach-draft` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

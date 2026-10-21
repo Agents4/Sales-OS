@@ -1,0 +1,7 @@
+description = "Turn lessons from real deals into proposed improvements to skills, templates, rules or the context library, for human approval. Use when a debrief or win/los..."
+prompt = """
+Activate and follow the Sales-OS skill `sos-ratchet` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

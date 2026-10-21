@@ -1,0 +1,7 @@
+description = "Check Blue, Green and Gold Sheets for structure and quality, using the lint command when a shell is available or the rubrics by hand when not. Use when the u..."
+prompt = """
+Activate and follow the Sales-OS skill `sos-sheet-lint` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

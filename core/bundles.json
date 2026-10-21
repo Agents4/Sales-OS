@@ -1,0 +1,20 @@
+{
+  "bundles": {
+    "seller-core": {
+      "description": "Everything a seller needs to plan and run complex deals",
+      "skills": ["sos-start", "sos-setup", "mh-blue-sheet", "mh-green-sheet", "mh-call-debrief", "mh-red-flag-scan", "mh-coach-development", "mh-stakeholder-review", "mh-competitive-position", "mh-mutual-action-plan", "mh-outreach-draft", "mh-icp-fit", "mh-account-research"]
+    },
+    "manager": {
+      "description": "Deal inspection, forecast challenge and coaching",
+      "skills": ["sos-start", "mh-blue-sheet", "mh-deal-review", "mh-red-flag-scan", "mh-stakeholder-review", "mh-competitive-position", "mh-pipeline-review", "mh-win-loss-review", "mh-gold-sheet", "sos-sheet-lint"]
+    },
+    "strategic-accounts": {
+      "description": "Account planning for key and strategic accounts",
+      "skills": ["sos-start", "mh-gold-sheet", "mh-blue-sheet", "mh-account-research", "mh-stakeholder-review", "mh-coach-development", "mh-competitive-position"]
+    },
+    "revops": {
+      "description": "Operations, hygiene, CRM and system maintenance",
+      "skills": ["sos-start", "sos-setup", "sos-sheet-lint", "sos-crm-sync", "sos-notebook-pack", "sos-skill-author", "sos-ratchet", "mh-pipeline-review", "mh-win-loss-review"]
+    }
+  }
+}

@@ -1,0 +1,7 @@
+description = "Build or review a Large Account Management Process (LAMP) Gold Sheet for a strategic account: Field of Play, Strategic Players, strengths, Critical Vulnerabi..."
+prompt = """
+Activate and follow the Sales-OS skill `mh-gold-sheet` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

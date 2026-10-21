@@ -1,0 +1,7 @@
+description = "Read opportunity, contact and activity data from a connected CRM to seed or reconcile Blue Sheets, and prepare approval-gated write-backs of safe summary fie..."
+prompt = """
+Activate and follow the Sales-OS skill `sos-crm-sync` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

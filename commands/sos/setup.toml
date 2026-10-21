@@ -1,0 +1,7 @@
+description = "Set up Sales-OS for a company or seller by interviewing for business info, sales motion, writing style and thresholds, and writing the context library. Use w..."
+prompt = """
+Activate and follow the Sales-OS skill `sos-setup` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

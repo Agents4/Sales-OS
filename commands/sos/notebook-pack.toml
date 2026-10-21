@@ -1,0 +1,7 @@
+description = "Prepare source packs and instructions for a Gemini Notebook (NotebookLM) so a team can chat with an account room, a company playbook or the methodology. Use..."
+prompt = """
+Activate and follow the Sales-OS skill `sos-notebook-pack` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

@@ -1,0 +1,7 @@
+description = "Stress-test a deal plan, proposal or message from the viewpoint of the Economic Buyer, User Buyer, Technical Buyer, Coach or the strongest competitor. Use wh..."
+prompt = """
+Activate and follow the Sales-OS skill `mh-stakeholder-review` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

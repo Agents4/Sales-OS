@@ -1,0 +1,19 @@
+{
+  "title": "Miller Heiman method coach",
+  "description": "A grounded coach for Strategic Selling, Conceptual Selling and LAMP. Ask method questions, get critiques of pasted sheets, and practice with quizzes. Answers come only from these sources.",
+  "chat_instructions": "chat-instructions.txt",
+  "studio_prompts": "studio-prompts.md",
+  "sources": [
+    {"title": "Method overview and glossary", "files": ["methodology/00-overview.md", "methodology/glossary.md", "methodology/fidelity-ledger.md"]},
+    {"title": "Strategic Selling and the Blue Sheet", "files": ["methodology/strategic-selling.md", "methodology/signals-library.md"]},
+    {"title": "Conceptual Selling and the Green Sheet", "files": ["methodology/conceptual-selling.md"]},
+    {"title": "LAMP and the Gold Sheet", "files": ["methodology/lamp.md"]},
+    {"title": "Funnel, pipeline and forecast gates", "files": ["methodology/funnel-and-pipeline.md"]},
+    {"title": "Failure modes and complementary frameworks", "files": ["methodology/failure-modes.md", "methodology/complementary-frameworks.md"]},
+    {"title": "Templates", "files": ["templates/blue-sheet.md", "templates/green-sheet.md", "templates/gold-sheet.md"]},
+    {"title": "Worked examples (fictional)", "files": ["templates/example-blue-sheet.md", "templates/example-green-sheet.md", "templates/example-gold-sheet.md"]},
+    {"title": "Review rubrics", "files": ["rubrics/blue-sheet.md", "rubrics/green-sheet.md", "rubrics/gold-sheet.md", "rubrics/debrief.md"]},
+    {"title": "Stakeholder lenses", "files": ["lenses/economic-buyer.md", "lenses/user-buyer.md", "lenses/technical-buyer.md", "lenses/coach.md", "lenses/competitor.md"]},
+    {"title": "Operating rules", "files": ["shared/operating-rules.md"]}
+  ]
+}

@@ -1,0 +1,7 @@
+description = "Plan a customer conversation with a Conceptual Selling Green Sheet: realistic objective, buyer's Concept, the five question types, and what to give. Use when..."
+prompt = """
+Activate and follow the Sales-OS skill `mh-green-sheet` (use the activate_skill tool if it is not already active). Relative paths (references/, assets/) resolve against the skill's own folder.
+
+Request and inputs from the user:
+{{args}}
+"""

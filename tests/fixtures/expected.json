@@ -1,0 +1,17 @@
+{
+  "core/templates/example-blue-sheet.md": {"errors": []},
+  "core/templates/example-green-sheet.md": {"errors": []},
+  "core/templates/example-gold-sheet.md": {"errors": []},
+  "tests/fixtures/blue-bad.md": {
+    "errors": ["BS001", "BS003", "BS007", "BS008", "BS018"],
+    "warnings_include": ["BS002", "BS004", "BS005", "BS006", "BS009", "BS010", "BS017", "BS020"]
+  },
+  "tests/fixtures/green-bad.md": {
+    "errors": ["GS001", "GS002"],
+    "warnings_include": ["GS003", "GS004", "GS005"]
+  },
+  "tests/fixtures/gold-bad.md": {
+    "errors": ["AS002", "AS006", "AS007", "AS009"],
+    "warnings_include": ["AS003", "AS004", "AS005", "AS008", "AS010", "AS011", "AS012"]
+  }
+}
