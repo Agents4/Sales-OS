@@ -31,7 +31,13 @@ from .notebook import build_static_packs
 from .skills import (Skill, command_name, compile_skill, discover_skills,
                      select_skills, validate_collection, load_bundles)
 
-ALL_TARGETS = ["agents", "claude", "gemini-cli", "gemini-app", "gemini-extension", "claude-plugin", "portable", "notebook"]
+ALL_TARGETS = ["agents", "claude", "gemini-cli", "gemini-app", "gemini-extension", "extension-root", "claude-plugin", "portable", "notebook"]
+
+# When the repository root is itself a Gemini CLI extension (gemini-extension.json at the root),
+# these root files are generated from dist/gemini-extension so a GitHub install never goes stale.
+EXTENSION_ROOT_MARKER = "gemini-extension.json"
+EXTENSION_ROOT_FILES = ("gemini-extension.json", "GEMINI.md")
+EXTENSION_ROOT_DIRS = ("skills", "commands")
 MANIFEST = ".sales-os-managed.json"
 ZIP_DATE = (2026, 1, 1, 0, 0, 0)
 REPO_ONLY_RE = re.compile(r"<!--\s*repo-only:start\s*-->.*?<!--\s*repo-only:end\s*-->\s*", re.DOTALL)
@@ -286,7 +292,8 @@ def build(root: str, bundle: Optional[str] = None, targets: Optional[List[str]] 
             gen_gemini_commands(stage, ".gemini/commands/sos", skills, "project")
         if "gemini-app" in targets:
             gen_gemini_app(stage, skills, core_dir, root, version)
-        if "gemini-extension" in targets:
+        root_ext = "extension-root" in targets and os.path.isfile(os.path.join(root, EXTENSION_ROOT_MARKER))
+        if "gemini-extension" in targets or root_ext:
             gen_extension(stage, skills, core_dir, root, version)
         if "claude-plugin" in targets:
             gen_claude_plugin(stage, skills, core_dir, version)
@@ -306,7 +313,19 @@ def build(root: str, bundle: Optional[str] = None, targets: Optional[List[str]] 
             if t in targets:
                 whole_dirs.append(r)
 
+        if root_ext:
+            whole_dirs += list(EXTENSION_ROOT_DIRS)
         drift: List[str] = []
+        if root_ext:
+            ext_stage = os.path.join(stage, "dist", "gemini-extension")
+            for name in EXTENSION_ROOT_FILES:
+                new_f = os.path.join(ext_stage, name)
+                cur_f = os.path.join(root, name)
+                if check:
+                    if not os.path.isfile(cur_f) or open(new_f, "rb").read() != open(cur_f, "rb").read():
+                        drift.append("%s: differs from generated extension file" % name)
+                else:
+                    shutil.copyfile(new_f, cur_f)
         for rel in managed_skill_dirs:
             new = os.path.join(stage, rel)
             cur = os.path.join(root, rel)
@@ -337,7 +356,7 @@ def build(root: str, bundle: Optional[str] = None, targets: Optional[List[str]] 
                     shutil.copytree(os.path.join(new, n), d)
                 shutil.copyfile(os.path.join(new, MANIFEST), mp)
         for rel in whole_dirs:
-            new = os.path.join(stage, rel)
+            new = os.path.join(stage, "dist", "gemini-extension", rel) if rel in EXTENSION_ROOT_DIRS else os.path.join(stage, rel)
             cur = os.path.join(root, rel)
             if check:
                 for p in diff_trees(new, cur):

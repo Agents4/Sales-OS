@@ -1,0 +1,35 @@
+{
+  "manifest_version": 1,
+  "name": "Sales-OS",
+  "slug": "sales-os",
+  "version": {"file": "VERSION"},
+  "rules_file": "AGENTS.md",
+  "skills": {
+    "source": "core/skills",
+    "local": "local/skills",
+    "authoring_guide": "core/shared/skill-authoring.md",
+    "template": "core/skills/mh-red-flag-scan/SKILL.md",
+    "naming": "lowercase letters, digits, single hyphens; folder name equals name; mh- for methodology skills, sos- for system skills; 64 characters at most"
+  },
+  "commands": {
+    "validate": "python3 tools/sos.py validate",
+    "build": "python3 tools/sos.py build",
+    "doctor": "python3 tools/sos.py doctor",
+    "evals": "evals/README.md"
+  },
+  "registries": [
+    {"file": "AGENTS.md", "check": "lists_skills", "update": "Add a row to the 'Route the request' table"},
+    {"file": "core/skills/sos-start/SKILL.md", "check": "lists_skills", "update": "Add a row to the routing table"},
+    {"file": "core/bundles.json", "check": "lists_skills", "update": "Add the skill to every bundle that should ship it"},
+    {"file": "README.md", "check": "skill_count", "pattern": "\\b(\\d+) skills\\b", "update": "Update the skill counts (the table there is a curated subset)"},
+    {"file": "docs/architecture.md", "check": "skill_count", "pattern": "\\b(\\d+) Agent Skills\\b", "update": "Update the skill count"},
+    {"file": "CHANGELOG.md", "update": "Add a line under the Unreleased heading"}
+  ],
+  "generated": [
+    ".agents/skills", ".claude/skills", ".gemini/commands/sos", "dist",
+    "GEMINI.md", "gemini-extension.json", "skills", "commands"
+  ],
+  "protect": ["workspace/", "local/"],
+  "evals": "evals/",
+  "platforms": ["gemini-cli", "claude-code", "gemini-app", "codex", "chat-only"]
+}
