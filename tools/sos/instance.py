@@ -218,6 +218,50 @@ def release(root: str, out_dir: Optional[str] = None) -> str:
     return path
 
 
+# ---------------------------------------------------------------------------- registries
+def check_registries(root: str, skills) -> Tuple[List[str], List[str]]:
+    """Check the registries declared in os.manifest.json. Returns (problems, notes).
+    A registry is a hand-maintained file that must change when a skill is added.
+    check = lists_skills: every product skill name appears in the file.
+    check = skill_count: every number matched by `pattern` equals the product skill count."""
+    mp = os.path.join(root, "os.manifest.json")
+    if not os.path.isfile(mp):
+        return [], []
+    try:
+        with open(mp, "r", encoding="utf-8") as fh:
+            man = json.load(fh)
+    except (OSError, ValueError) as e:
+        return ["os.manifest.json is not valid JSON (%s)" % e], []
+    names = sorted(s.name for s in skills if getattr(s, "origin", "core") == "core")
+    problems: List[str] = []
+    notes: List[str] = []
+    for reg in man.get("registries", []):
+        kind = reg.get("check")
+        if not kind:
+            continue
+        rel = reg.get("file", "")
+        path = os.path.join(root, rel)
+        if not os.path.isfile(path):
+            notes.append("registry %s not found" % rel)
+            continue
+        with open(path, "r", encoding="utf-8") as fh:
+            text = fh.read()
+        if kind == "lists_skills":
+            missing = [n for n in names if not re.search(r"(?<![\w-])%s(?![\w-])" % re.escape(n), text)]
+            if missing:
+                problems.append("%s does not mention: %s. %s" % (rel, ", ".join(missing), reg.get("update", "")))
+        elif kind == "skill_count":
+            found = re.findall(reg.get("pattern", r"(\d+) skills"), text)
+            wrong = sorted(set(f for f in found if int(f) != len(names)))
+            if not found:
+                notes.append("%s: no skill count found by pattern %s" % (rel, reg.get("pattern")))
+            elif wrong:
+                problems.append("%s states %s skills; there are %d. %s" % (rel, "/".join(wrong), len(names), reg.get("update", "")))
+        else:
+            notes.append("registry %s: unknown check '%s'" % (rel, kind))
+    return problems, notes
+
+
 # ---------------------------------------------------------------------------- doctor
 def doctor(root: str) -> int:
     problems = 0
@@ -277,6 +321,16 @@ def doctor(root: str) -> int:
     (bad if e else ok)("%d skills, %d error(s), %d warning(s)" % (len(skills), len(e), len(w)))
     for i in e[:10]:
         print("          " + str(i))
+
+    reg_problems, reg_notes = check_registries(root, skills)
+    if os.path.isfile(os.path.join(root, "os.manifest.json")):
+        if reg_problems:
+            for m in reg_problems:
+                bad("registry: " + m)
+        else:
+            ok("registries in os.manifest.json are consistent with the skills")
+        for m in reg_notes:
+            note(m)
 
     a = os.path.join(root, "AGENTS.md")
     if os.path.isfile(a):
