@@ -24,7 +24,7 @@ Notes:
 
 An agentic operating system for complex B2B sales, built on the Miller Heiman methodology: Strategic Selling (Blue Sheet), Conceptual Selling (Green Sheet) and the Large Account Management Process (Gold Sheet).
 
-It is a library of skills, templates, rubrics and tools that any AI assistant can use. Written once, it runs on Google first (Gemini app, Gemini Notebook, Gemini Enterprise, Gemini CLI, Antigravity CLI), and also on Claude, Cursor, Codex and plain chat tools.
+It is a library of skills, templates, rubrics and tools that any AI assistant can use. Written once, it runs on Google first (Gemini app, Gemini Notebook, Gemini Enterprise, Gemini CLI, Antigravity CLI), on Microsoft 365 Copilot (Cowork, Agent Builder, Copilot Studio, Notebooks, GitHub Copilot in VS Code), and also on Claude, Cursor, Codex and plain chat tools.
 
 ## What a seller gets
 
@@ -47,7 +47,7 @@ Managers get deal and pipeline reviews, forecast gates and win/loss reviews. Rev
 core/        the product: methodology, 22 skills, templates, rubrics, lenses, shared rules
 tools/       python3 tools/sos.py: validate, build, lint, pipeline, notebook-pack, new-instance, doctor
 workspace/   your data: context library, accounts, outputs (never overwritten by upgrades)
-adapters/    how to run it on each platform; start with adapters/google/
+adapters/    how to run it on each platform; start with adapters/google/ or adapters/microsoft/
 .agents/ .claude/ .gemini/ dist/   generated for each platform. Do not edit by hand
 ```
 
@@ -62,7 +62,7 @@ Four ideas keep it trustworthy:
 
 1. Set this folder to **Available offline** in Drive for desktop (`adapters/google/drive-setup.md`).
 2. Run `python3 tools/sos.py doctor`, then `python3 tools/sos.py build`.
-3. Pick your surface in `adapters/google/README.md`: Gemini Notebook and Gemini app skills need nothing installed; the CLIs unlock the tools.
+3. Pick your surface in `adapters/google/README.md` (Google) or `adapters/microsoft/README.md` (Microsoft 365 and Copilot): notebooks and app skills need nothing installed; the CLIs and VS Code unlock the tools.
 4. Say "start" to `sos-start`, then run `sos-setup` to fill in your company facts.
 5. Build your first Blue Sheet on a live deal.
 

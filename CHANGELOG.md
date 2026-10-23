@@ -2,6 +2,13 @@
 
 All notable changes to the Sales-OS product. Client data lives in `workspace/` and is not versioned here.
 
+## 1.0.2 (2026-10-22)
+
+- Microsoft 365 and Copilot implementation guide in `adapters/microsoft/`: playbook with three tiers, Copilot Cowork skills and admin deployment, Agent Builder and Copilot Studio, Copilot Notebooks, OneDrive and SharePoint setup, GitHub Copilot in VS Code, and a dated fact sheet with sources and a verify list.
+- New build target `microsoft` (`dist/microsoft/`): one upload zip per skill, three 8-skill agent presets with ready-to-paste agent names, descriptions and instructions, and an install note. The build warns when a zip exceeds a Cowork upload limit.
+- `core/bundles.json` gains `agent_presets`; `validate` checks that each has at most 8 skills (SK083, SK084).
+- `new-instance --platforms microsoft`.
+
 ## 1.0.1 (2026-10-21)
 
 - Gemini CLI extension published from a repository whose root is the extension (`python3 tools/sos.py export-extension <dir>`).

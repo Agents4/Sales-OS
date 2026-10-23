@@ -1,6 +1,6 @@
 # Chat-only tools
 
-For tools with no skill support: custom GPTs, Copilot, Grok, plain chat.
+For tools with no skill support: custom GPTs, Copilot Chat, Grok, plain chat. Microsoft 365 Copilot has native skills in Cowork; see `../microsoft/README.md` first.
 
 1. Build the portable files: `python3 tools/sos.py build --target portable`. Output is in `dist/portable/`.
 2. Paste `dist/portable/system-prompt.md` as the custom instructions (it stays under 8,000 characters).

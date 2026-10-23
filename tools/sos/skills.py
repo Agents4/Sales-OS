@@ -257,6 +257,15 @@ def validate_collection(skills: List[Skill], root: str) -> List[Issue]:
             covered.update(spec.get("skills", []))
         for n in sorted(names - covered):
             issues.append(Issue("warn", "SK082", "bundles.json", "skill %r is in no bundle" % n))
+        for pname, spec in (bundles.get("agent_presets", {}) or {}).items():
+            if pname.startswith("_"):
+                continue
+            plist = spec.get("skills", [])
+            for sk in plist:
+                if sk not in names:
+                    issues.append(Issue("error", "SK083", "bundles.json", "agent preset %r references unknown skill %r" % (pname, sk)))
+            if len(plist) > 8:
+                issues.append(Issue("error", "SK084", "bundles.json", "agent preset %r has %d skills; the limit is 8" % (pname, len(plist))))
     return issues
 
 
