@@ -2,6 +2,12 @@
 
 All notable changes to the Sales-OS product. Client data lives in `workspace/` and is not versioned here.
 
+## Unreleased
+
+- `build` now regenerates the repository root extension files (`GEMINI.md`, `gemini-extension.json`, `skills/`, `commands/`) when the root is itself an extension, and `build --check` and `doctor` flag drift. Before this, a skill added to `core/` never reached a GitHub install of the extension.
+- Added `os.manifest.json` (the OS standard manifest) and a registry check in `doctor`: every skill must appear in the route tables and bundles, and the skill counts in README and architecture must match.
+- Added an "Adding a skill" checklist to `core/shared/skill-authoring.md`.
+
 ## 1.0.1 (2026-10-21)
 
 - Gemini CLI extension published from a repository whose root is the extension (`python3 tools/sos.py export-extension <dir>`).
