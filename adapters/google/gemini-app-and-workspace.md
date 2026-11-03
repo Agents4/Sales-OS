@@ -1,6 +1,8 @@
 # Gemini app and Workspace: skills
 
-Status as of 2026-10-17. Verify against `platform-facts.md` before a client session.
+Status as of 2026-11-03. Verify against `platform-facts.md` before a client session.
+
+> **Corporate accounts:** Google's transition page says skills are available only on personal Google accounts for now. Work and school accounts come "soon". Gems stay on Workspace business, enterprise and nonprofit accounts until March 2027. If your corporate account has no Skills page, use `corporate-workspace.md` (Gems plus Notebooks). Check the Skills page on a test account first.
 
 ## What you get
 
