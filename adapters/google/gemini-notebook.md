@@ -19,9 +19,11 @@ Each pack folder has `sources/`, `chat-instructions.txt`, `studio-prompts.md` an
 3. Open the chat settings, choose a custom conversational style and paste `chat-instructions.txt`. Keep it short; there is a character limit that has changed over time.
 4. Use `studio-prompts.md` for audio overviews, reports, quizzes, flashcards, slide decks and mind maps.
 
-## Limits (verify before relying)
+## Limits (Gemini Notebook Help, retrieved 2026-11-03)
 
-About 50 sources per notebook on the consumer tier; Gemini Notebook Enterprise is documented at 300 sources, with per-source limits of 500,000 words or 500 MB. The builder splits long sources and warns on oversized chat instructions.
+- Per source: 500,000 words or 200 MB for local uploads.
+- Sources per notebook: 50 (standard), 100 (more), 300 (higher), 400 (expanded add-on), 600 (highest add-on). Notebooks per user: 100, 200, 500. The tier follows the Workspace edition; users can see a Pro, Plus, Expanded or Ultra badge by their profile picture. Ask the admin which tier applies.
+- The chat-instruction character limit is not documented in the official pages checked. Keep `chat-instructions.txt` short; the builder warns when it is oversized.
 
 ## Freshness
 

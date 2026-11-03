@@ -4,6 +4,8 @@ All notable changes to the Sales-OS product. Client data lives in `workspace/` a
 
 ## Unreleased
 
+- `build --target portable` now writes Gem kits for corporate Gemini accounts: `gem-seller-instructions.md`, `gem-manager-instructions.md` and `gem-kits.md` (nine skill files plus one company-context file per Gem).
+- New guide `adapters/google/corporate-workspace.md` for Workspace accounts with no agent platform. Corrected the Gemini app guide: skills are not yet available on work accounts.
 - `build` now regenerates the repository root extension files (`GEMINI.md`, `gemini-extension.json`, `skills/`, `commands/`) when the root is itself an extension, and `build --check` and `doctor` flag drift. Before this, a skill added to `core/` never reached a GitHub install of the extension.
 - Added `os.manifest.json` (the OS standard manifest) and a registry check in `doctor`: every skill must appear in the route tables and bundles, and the skill counts in README and architecture must match.
 - Added an "Adding a skill" checklist to `core/shared/skill-authoring.md`.

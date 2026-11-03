@@ -16,6 +16,10 @@ For sellers who only have a browser. Nothing for IT to deploy.
 
 Outcome: sellers get method coaching, call prep and debriefs in chat, with outputs saved by hand. Fastest to adopt, least automation.
 
+### Tier 1b: corporate Workspace, no agent platform
+
+For a Workspace company with no Gemini Enterprise agent platform, and a corporate account that has no Skills page yet. Two standard features, no code: a Gem per role (Seller, Manager) and Gemini Notebooks (method coach, company playbook, account rooms), with Drive for context and outputs. Guide: `corporate-workspace.md`.
+
 ### Tier 2: managed (admin-enabled)
 
 For companies on Gemini Enterprise or Workspace with an admin.
@@ -70,6 +74,7 @@ See `docs/rollout-playbook.md` for the full plan, KPIs and roles.
 | File | Contents |
 |---|---|
 | `drive-setup.md` | Drive for desktop settings that avoid read failures |
+| `corporate-workspace.md` | Gems plus Notebooks on a corporate Workspace account, admin asks, kits |
 | `gemini-app-and-workspace.md` | Skills in the Gemini app, zips, limits |
 | `gemini-notebook.md` | Notebook packs, chat instructions, studio prompts |
 | `gemini-enterprise.md` | Enterprise skills, Workflow Builder, connectors, governance |
