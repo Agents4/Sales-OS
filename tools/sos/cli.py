@@ -312,7 +312,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     s = sub.add_parser("new-instance", help="scaffold a client instance")
     s.add_argument("dest")
     s.add_argument("--client", required=True)
-    s.add_argument("--platforms", nargs="+", default=["google"], choices=["google", "claude", "generic", "all"])
+    s.add_argument("--platforms", nargs="+", default=["google"], choices=["google", "microsoft", "claude", "generic", "all"])
     s.add_argument("--bundle", help="restrict to a skill bundle")
     s.set_defaults(fn=cmd_new_instance)
 

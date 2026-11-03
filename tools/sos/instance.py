@@ -25,6 +25,7 @@ PRODUCT_DIRS = ["core", "tools", "adapters", "evals", "tests"]
 PRODUCT_FILES = ["AGENTS.md", "CLAUDE.md", "VERSION", ".gitignore"]
 PLATFORM_TARGETS = {
     "google": ["agents", "gemini-cli", "gemini-app", "gemini-extension", "notebook", "portable"],
+    "microsoft": ["agents", "microsoft", "portable"],
     "claude": ["agents", "claude", "claude-plugin", "portable"],
     "generic": ["agents", "portable"],
     "all": ALL_TARGETS,

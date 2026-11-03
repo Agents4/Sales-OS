@@ -13,11 +13,11 @@ How to take Sales-OS from a folder to a habit in a sales team. Written for the f
 
 ### Phase 0: Prepare (week 0)
 
-- Confirm account types, licenses and which Google tier applies (`adapters/google/platform-facts.md`, verify list).
+- Confirm account types, licenses and which Google or Microsoft tier applies (`adapters/google/platform-facts.md` or `adapters/microsoft/platform-facts.md`, verify list).
 - Confirm data policy: which tools may hold customer data.
 - Confirm Miller Heiman licensing and terminology with the client.
 - Choose the pilot team (5 to 10 sellers, 1 manager) and one executive sponsor.
-- Create the client instance: `new-instance`. Set Drive offline access.
+- Create the client instance: `new-instance` (`--platforms google`, `microsoft` or both). Set Drive offline access, or OneDrive "Always keep on this device" (`adapters/microsoft/onedrive-sharepoint-setup.md`).
 
 ### Phase 1: Foundation (weeks 1 to 2)
 
@@ -81,7 +81,7 @@ Adoption health: sheets edited in the last 14 days, active users per week, time 
 
 - [ ] Licenses and account types confirmed; tier chosen
 - [ ] Data policy agreed; approved tools listed in the context library
-- [ ] Drive folder set offline; doctor passes
+- [ ] Drive or OneDrive folder set offline; doctor passes
 - [ ] Instance created; build passes
 - [ ] Context library filled and approved
 - [ ] Enablement session held; recording or notebook shared

@@ -32,6 +32,10 @@ Sources were read in three groups: (1) summaries and descriptions of the three b
 
 Done 2026-10-17; sources and the verify list are in `adapters/google/platform-facts.md`. Key corrections made to the design: Gemini CLI transitioned to Antigravity CLI for individual accounts; Gems were replaced by skills in the Gemini app; NotebookLM appears as Gemini Notebook in Google's current documentation; skills use the open SKILL.md format so one source serves every platform.
 
+## Platform research (Microsoft)
+
+Done 2026-10-22; sources and the verify list are in `adapters/microsoft/platform-facts.md`. Key findings that shaped the design: Copilot Cowork is generally available and loads the same SKILL.md zips (10 MB, 100 files per archive); Agent Builder and Copilot Studio skills are preview with an 8-skill limit per agent, so Sales-OS ships three 8-skill agent presets; plain Copilot Chat has no skills, so it uses the portable prompt and Copilot Notebooks; VS Code and GitHub Copilot read `.agents/skills/` directly. Several claims (Notebook limits, federated connector dates, Anthropic region limits) rest on third-party or unverified sources and are rated low confidence.
+
 ## Open questions for the client
 
 1. Which Google licenses and accounts do sellers hold?

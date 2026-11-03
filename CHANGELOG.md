@@ -2,10 +2,12 @@
 
 All notable changes to the Sales-OS product. Client data lives in `workspace/` and is not versioned here.
 
-## Unreleased
+## 1.0.2 (2026-10-22)
 
-- `build --target portable` now writes Gem kits for corporate Gemini accounts: `gem-seller-instructions.md`, `gem-manager-instructions.md` and `gem-kits.md` (nine skill files plus one company-context file per Gem).
-- New guide `adapters/google/corporate-workspace.md` for Workspace accounts with no agent platform. Corrected the Gemini app guide: skills are not yet available on work accounts.
+- Microsoft 365 and Copilot implementation guide in `adapters/microsoft/`: playbook with three tiers, Copilot Cowork skills and admin deployment, Agent Builder and Copilot Studio, Copilot Notebooks, OneDrive and SharePoint setup, GitHub Copilot in VS Code, and a dated fact sheet with sources and a verify list.
+- New build target `microsoft` (`dist/microsoft/`): one upload zip per skill, three 8-skill agent presets with ready-to-paste agent names, descriptions and instructions, and an install note. The build warns when a zip exceeds a Cowork upload limit.
+- `core/bundles.json` gains `agent_presets`; `validate` checks that each has at most 8 skills (SK083, SK084).
+- `new-instance --platforms microsoft`.
 - `build` now regenerates the repository root extension files (`GEMINI.md`, `gemini-extension.json`, `skills/`, `commands/`) when the root is itself an extension, and `build --check` and `doctor` flag drift. Before this, a skill added to `core/` never reached a GitHub install of the extension.
 - Added `os.manifest.json` (the OS standard manifest) and a registry check in `doctor`: every skill must appear in the route tables and bundles, and the skill counts in README and architecture must match.
 - Added an "Adding a skill" checklist to `core/shared/skill-authoring.md`.
