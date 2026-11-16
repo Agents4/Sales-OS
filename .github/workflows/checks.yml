@@ -1,0 +1,53 @@
+name: checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate, build, doctor, selftest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 tools/sos.py validate
+      - name: Build, then fail if a tracked generated file changed
+        run: |
+          python3 tools/sos.py build
+          git diff --exit-code
+      - run: python3 tools/sos.py doctor
+      - run: python3 tools/sos.py selftest
+
+  client-data:
+    name: No client data in the change
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fail if the change adds account or output files
+        run: |
+          bad=$(git diff --name-only --diff-filter=AM "origin/${{ github.base_ref }}"...HEAD -- \
+            'workspace/accounts' 'workspace/outputs' | grep -v '/README.md$' || true)
+          if [ -n "$bad" ]; then echo "Client data must not be committed:"; echo "$bad"; exit 1; fi
+          echo "client data check: clean"
+
+  extension:
+    name: Gemini CLI extension validates
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install -g @google/gemini-cli
+      - run: gemini --version
+      - run: gemini extensions validate .
