@@ -19,11 +19,14 @@ Each pack folder has `sources/`, `chat-instructions.txt`, `studio-prompts.md` an
 3. Open the chat settings, choose a custom conversational style and paste `chat-instructions.txt`. Keep it short; there is a character limit that has changed over time.
 4. Use `studio-prompts.md` for audio overviews, reports, quizzes, flashcards, slide decks and mind maps.
 
-## Limits (Gemini Notebook Help, retrieved 2026-11-03)
+## Limits (Gemini Notebook Help, retrieved 2026-11-16)
 
-- Per source: 500,000 words or 200 MB for local uploads.
-- Sources per notebook: 50 (standard), 100 (more), 300 (higher), 400 (expanded add-on), 600 (highest add-on). Notebooks per user: 100, 200, 500. The tier follows the Workspace edition; users can see a Pro, Plus, Expanded or Ultra badge by their profile picture. Ask the admin which tier applies.
+- Per source: 500,000 words or 200 MB for local uploads (earlier read; the current work-account page lists no source size, so check it in your tenant).
+- Sources per notebook: 50 (Standard), 100 (More), 300 (Higher), 400 (Expanded), 600 (Highest). Notebooks per user: 100, 200, 500. The tier follows the Workspace edition; users can see a Pro, Plus, Expanded or Ultra badge by their profile picture. Ask the admin which tier applies.
 - The chat-instruction character limit is not documented in the official pages checked. Keep `chat-instructions.txt` short; the builder warns when it is oversized.
+
+- On Workspace editions with enterprise-grade security and privacy, files, chats and outputs are not reviewed by human reviewers or used to improve models. On additional-service editions, data is not used to train unless you send feedback, and then the interaction may be reviewed. Google's page does not spell out the terms for the higher tiers, so ask your admin.
+- Skills in the Gemini app can take a Notebook as a file source, which Gems could not. Check it in your tenant.
 
 ## Freshness
 

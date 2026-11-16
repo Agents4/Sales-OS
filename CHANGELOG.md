@@ -2,6 +2,10 @@
 
 All notable changes to the Sales-OS product. Client data lives in `workspace/` and is not versioned here.
 
+## Unreleased
+
+- Google guides refreshed on 2026-11-16. Skills are rolling out to Workspace accounts in the Gemini app (from 2026-10-13); Gems stay until 2027-03-01 at the earliest. The earlier "skills are personal-account only" and the personal-account Gem dates are removed (platform facts 8 and 22). Added the Gemini app skill file types, the Notebook-as-a-skill-source option, the Gemini Enterprise skill zip limits and registry, the Notebook tier names and privacy cells, and a skills-on admin ask. CLI and Antigravity status re-checked with no change found.
+
 ## 1.0.2 (2026-10-22)
 
 - Microsoft 365 and Copilot implementation guide in `adapters/microsoft/`: playbook with three tiers, Copilot Cowork skills and admin deployment, Agent Builder and Copilot Studio, Copilot Notebooks, OneDrive and SharePoint setup, GitHub Copilot in VS Code, and a dated fact sheet with sources and a verify list.
