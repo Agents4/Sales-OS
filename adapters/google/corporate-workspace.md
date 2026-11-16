@@ -2,20 +2,20 @@
 
 For a company on Google Workspace that has no Gemini Enterprise agent platform: no Workflow Builder, no custom connectors, no code to deploy. You use two standard Workspace features, the Gemini app and Gemini Notebook (formerly NotebookLM), plus Drive.
 
-Status as of 2026-11-03. Sources and confidence are in `platform-facts.md`.
+Status as of 2026-11-16. Sources and confidence are in `platform-facts.md`.
 
 ## Answer first
 
 Run Sales-OS as a **Gem** (does the jobs) plus **Notebooks** (answer from your documents with citations). Drive holds the context and the outputs. Nothing writes back to Drive or the CRM by itself, so the seller copies outputs and sheet updates into Docs. That matches the Sales-OS approval gates: the tool drafts, the human sends.
 
-If the Skills page exists on the corporate account, use skills instead of Gems (Route A). If not, use Gems (Route B). Check first.
+Skills are now rolling out to Workspace accounts in the Gemini app (started 2026-10-13, due to finish in mid-November), and Gems stay until 2027-03-01 at the earliest. Check the Skills page first. If it is there and your admin has turned skills on, you can use skills (Route A). Gems (Route B) still work today and are the safer route for team sharing until you confirm that skill sharing works in your tenant.
 
 ## Step 0: Check which route you have (2 minutes)
 
 Open the Gemini app on a corporate test account and look for the Skills page.
 
-- **Skills page present:** Route A. Upload the zips from `dist/gemini-app/zips/` (see `gemini-app-and-workspace.md`).
-- **No Skills page:** Route B below. Google's transition page says skills are available to personal accounts only and that work and school accounts come "soon". It also says Gems are removed from Workspace business, enterprise and nonprofit accounts in March 2027.
+- **Skills page present:** Route A. Upload the zips from `dist/gemini-app/zips/` (see `gemini-app-and-workspace.md`). Before you rely on it, test that a second user can open a skill you share. Google's help page documents sharing in the web app, but the Workspace admin page lists Gemini app sharing as "coming soon" (fact 22). Until it works, each user uploads the zips themselves, or you stay on Gems.
+- **No Skills page:** Route B below. The rollout may not have reached your domain yet, or your admin has not turned skills on. Gems stay until 2027-03-01 at the earliest for Workspace business and enterprise, and move into Settings on 2026-11-17.
 
 Rehearse on a personal account only with fictional data. Never put customer data into a personal account.
 
@@ -23,11 +23,12 @@ Rehearse on a personal account only with fictional data. Never put customer data
 
 1. Gemini app on for the pilot group, with access to Drive files.
 2. Gem sharing on for the pilot group (Admin console, Gemini app settings, "Allow users to share Gems"). It applies per organizational unit or group, and a group setting wins. Changes take up to 24 hours.
-3. Gemini Notebook on for the pilot group, and the edition's tier. It sets sources per notebook: 50, 100 or 300.
-4. External sharing off for the Sales-OS shared drive. Gems and Notebooks follow Drive sharing.
-5. A shared drive named `Sales-OS`, owned by a group rather than a person.
-6. Written confirmation that Workspace is approved for customer data, and which data classes.
-7. The data terms for the Gemini app on your edition (the Workspace privacy hub). For Gemini Notebook on enterprise-grade editions, Google states that files, chats and outputs are not reviewed by humans or used to improve models.
+3. Skills on for the pilot group (Workspace Studio and Gemini in Workspace settings), and whether external skill sharing is restricted. Skip this if you are staying on Gems.
+4. Gemini Notebook on for the pilot group, and the edition's tier. It sets sources per notebook: 50, 100 or 300.
+5. External sharing off for the Sales-OS shared drive. Gems and Notebooks follow Drive sharing.
+6. A shared drive named `Sales-OS`, owned by a group rather than a person.
+7. Written confirmation that Workspace is approved for customer data, and which data classes.
+8. The data terms for the Gemini app on your edition (the Workspace privacy hub). For Gemini Notebook on enterprise-grade editions, Google states that files, chats and outputs are not reviewed by humans or used to improve models.
 
 ## Step 2: Build the files (one person, once)
 
@@ -73,7 +74,7 @@ Lint does not run in the Gem. The Gem walks the rubric by hand and says so. RevO
 
 ## Step 6: Moving to skills
 
-When the Skills page appears for your tenant, test one user first. Google converts Gems to skills automatically ahead of removal. Compare the result with `dist/gemini-app/zips/`, upload the zips for the bundle, and keep under 100 active skills. Retire the Gems after the pilot group confirms.
+When the Skills page is on for your tenant, test one user first. Google converts Gems to skills in the Gemini app. Each converted skill arrives as an inactive draft that its creator must review and activate, and it keeps the name, instructions, knowledge files and Drive permissions. A converted Gem becomes one skill with the ten files attached, so compare it with `dist/gemini-app/zips/` (one skill per job) and decide which you prefer. Skills can also take files from Drive and from Notebooks, which a Gem could not. Keep under 100 active skills (per the earlier help page). Retire the Gems after the pilot group confirms. Google says migration details come at least 30 days before automated migration starts.
 
 ## Limits
 
@@ -82,6 +83,6 @@ When the Skills page appears for your tenant, test one user first. Google conver
 | Gem knowledge files | 10 | Medium |
 | Gem instruction length | Not published. The generated text is about 4,300 characters | Unknown |
 | Notebook sources | 50, 100 or 300 by tier | High |
-| Notebook source size | 500,000 words or 200 MB | High |
+| Notebook source size | 500,000 words or 200 MB (earlier read; the current work-account page lists no source size) | Medium |
 | Notebook chat instructions | Not documented | Unknown |
-| Skills in Gemini app | 100 active, 100 MB per skill | High |
+| Skills in Gemini app | 100 MB per skill. 100 active at a time per an earlier help page; the current page states no active limit | High for size; Medium for 100 active |

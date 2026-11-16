@@ -1,8 +1,8 @@
 # Gemini app and Workspace: skills
 
-Status as of 2026-11-03. Verify against `platform-facts.md` before a client session.
+Status as of 2026-11-16. Verify against `platform-facts.md` before a client session.
 
-> **Corporate accounts:** Google's transition page says skills are available only on personal Google accounts for now. Work and school accounts come "soon". Gems stay on Workspace business, enterprise and nonprofit accounts until March 2027. If your corporate account has no Skills page, use `corporate-workspace.md` (Gems plus Notebooks). Check the Skills page on a test account first.
+> **Corporate accounts:** Google's transition page (updated 2026-11-09) says skills are available in the Gemini app to all Workspace editions, with the rollout started on 2026-10-13 and due to finish in mid-November. Admins must turn skills on. Gems stay, and move into Settings on 2026-11-17, until 2027-03-01 at the earliest (Business and Enterprise). If your corporate account has no Skills page yet, use `corporate-workspace.md` (Gems plus Notebooks). Check the Skills page on a test account first.
 
 ## What you get
 
@@ -25,20 +25,22 @@ Sales-OS compiles every skill into a self-contained zip (instructions, reference
 ## Limits to plan around
 
 - Unlimited skills, but only **100 active at a time**. Activate a bundle, not everything.
-- Uploads: plain-text-based files, 100 MB combined. Scripts cannot reach the internet. The Sales-OS zips are Markdown only.
+- Uploads: plain-text-based files plus `.docx`, `.pdf`, `.md`, `.csv`, `.xlsx`, `.pptx` and common images, 100 MB combined. Legacy `.doc`, `.xls`, `.ppt`, audio, video and archives are not supported. Scripts cannot reach the internet. The Sales-OS zips are Markdown only.
 - Remove hidden files like `.DS_Store` before uploading (the build already does).
 - Skills do not yet work with some Gemini features (Canvas, Deep Research and others at the time of writing).
 - Skills do not sync between the Gemini app and Workspace apps (Docs, Gmail and so on). Upload in each place you want them.
 
 ## Availability by account type (verify)
 
-Skills reached personal accounts first. Workspace business, enterprise, nonprofit and education accounts were announced for later, and Google's Gems-to-skills transition dates differ by account type (November 2026 personal, March 2027 Workspace business and enterprise, June 2027 education). Treat Workspace availability as unconfirmed until you see it in the client's admin console and a test user account.
+Skills began rolling out in the Gemini app on 2026-10-13 to all Workspace editions, and Workspace apps (Studio, Docs) followed from 2026-11-09. Gems are removed no sooner than 2027-03-01 (Business and Enterprise) and 2027-06-01 (Education). The page does not address nonprofit accounts. Skills built in the Gemini app are not available in Workspace apps or Gemini Enterprise, and the reverse. Confirm in the client's admin console and a test user account that skills are on.
+
+**Sharing:** Google's help page documents sharing in the Gemini web app (owner and Editors share, Viewer or Editor access, optional expiry, files shared separately), but the Workspace admin page lists Gemini app sharing as "coming soon". Test it with a second user before you plan a team rollout. If it does not work, each user uploads the zips.
 
 ## How a seller uses it
 
 - `/blue-sheet`, `/green-sheet`, `/call-debrief`: paste the material, answer three questions, copy the output to a Doc or a Markdown file.
 - No file access in this surface: skills run in chat-only mode. They return the artifact in one block and remind you where to save it.
-- Reference files (company facts, writing style) can be attached to a skill. Drive and Notebook file support for skills was announced as coming; check before depending on it.
+- Reference files (company facts, writing style) can be attached to a skill. Files can also be added from Google Drive and from Notebooks, and they keep their live link (they are left out of a downloaded zip). A Gem could not take a Notebook as a source. Check it in the client's tenant before depending on it.
 
 ## Where to be careful
 

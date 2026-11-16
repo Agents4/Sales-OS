@@ -1,6 +1,6 @@
 # Gemini CLI
 
-Status as of 2026-10-17. Google moved its terminal experience to Antigravity CLI. Gemini CLI stopped serving individual accounts (Google AI Pro, Ultra and free tier) on 2026-06-18. It remains available for enterprise users with Gemini Code Assist Standard or Enterprise licenses and for API-key authentication. Check `platform-facts.md` and the client's license before choosing this path. If the client's users are individuals or on a Workspace plan without those licenses, use Antigravity CLI instead (`antigravity-cli.md`). The skills are the same.
+Status as of 2026-10-17, re-checked 2026-11-16 with no change found. Google moved its terminal experience to Antigravity CLI. Gemini CLI stopped serving individual accounts (Google AI Pro, Ultra and free tier) on 2026-06-18. It remains available for enterprise users with Gemini Code Assist Standard or Enterprise licenses and for API-key authentication. Check `platform-facts.md` and the client's license before choosing this path. If the client's users are individuals or on a Workspace plan without those licenses, use Antigravity CLI instead (`antigravity-cli.md`). The skills are the same.
 
 ## What Sales-OS provides
 

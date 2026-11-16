@@ -1,6 +1,6 @@
 # Antigravity CLI
 
-Antigravity CLI is Google's terminal agent that replaced Gemini CLI for individual accounts (announced 2026-05-19; Gemini CLI stopped serving those accounts 2026-06-18). It keeps Agent Skills, hooks and subagents. Status as of 2026-10-17; verify with `platform-facts.md`.
+Antigravity CLI is Google's terminal agent that replaced Gemini CLI for individual accounts (announced 2026-05-19; Gemini CLI stopped serving those accounts 2026-06-18). It keeps Agent Skills, hooks and subagents. Status as of 2026-10-17, re-checked 2026-11-16 with no change found; verify with `platform-facts.md`.
 
 ## What Sales-OS provides
 

@@ -1,10 +1,10 @@
 # Gemini Enterprise
 
-Status as of 2026-10-17 from Google's release notes and documentation. Verify with `platform-facts.md`.
+Status as of 2026-11-16 from Google's release notes and documentation. Google's Enterprise documentation now sits partly under the Gemini Enterprise Agent Platform name. Verify with `platform-facts.md`.
 
 ## Skills
 
-Custom skills are generally available in Gemini Enterprise. End users can create, upload and share skills. An admin turns on the skills and skill-sharing settings in Feature Management, and can approve sharing requests. Upload the zips from `dist/gemini-app/zips/` (the format is the open Agent Skills layout; if a zip is rejected, upload the folder from `.agents/skills/<name>/`). Google also publishes pre-built skill packs and describes skills as an open specification that works across Antigravity, Claude Code and other tools.
+Custom skills are generally available in Gemini Enterprise. End users can create, upload and share skills. An admin turns on the skills and skill-sharing settings in Feature Management, and can approve sharing requests. Upload the zips from `dist/gemini-app/zips/` (the format is the open Agent Skills layout; if a zip is rejected, upload the folder from `.agents/skills/<name>/`). Each zip needs exactly one `SKILL.md`, at the root or in one top-level folder. Limits: `name` 1 to 64 characters and equal to the folder name, `description` up to 1,024, 100 MB compressed and uncompressed, 100 files, 10 directory levels. Only Python and Bash run, and skills are not available for use with agents. Standard, Plus and Pay-as-you-go editions can upload skills. Frontline can only browse and use shared skills. Skill sharing is a separate admin setting with optional review of share requests. A Skill Registry has been in public preview since 2026-05-19. Skills built in the Gemini app do not appear here, so upload them again. Google also publishes pre-built skill packs and describes skills as an open specification that works across Antigravity, Claude Code and other tools.
 
 ## Workflow Builder
 

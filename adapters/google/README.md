@@ -11,14 +11,14 @@ Pick the tier that matches the client's appetite and IT policy. They stack: each
 For sellers who only have a browser. Nothing for IT to deploy.
 
 - **Gemini Notebook** (the product formerly called NotebookLM): load the Methodology coach pack, then an account room per key account. Chat with grounded sources, generate briefings and quizzes. Guide: `gemini-notebook.md`.
-- **Gemini app skills**: upload the skill zips for the seller bundle. Skills run inside any Gemini chat. Guide: `gemini-app-and-workspace.md`. Check availability for the client's account type first: skills reached personal accounts before Workspace business accounts.
+- **Gemini app skills**: upload the skill zips for the seller bundle. Skills run inside any Gemini chat. Guide: `gemini-app-and-workspace.md`. Check availability first: skills began rolling out to Workspace accounts on 2026-10-13, but an admin must turn them on, and Gemini app skill sharing needs a test.
 - **Google Docs and Drive** for the living sheets (as `.md` or pasted into Docs) and the context library.
 
 Outcome: sellers get method coaching, call prep and debriefs in chat, with outputs saved by hand. Fastest to adopt, least automation.
 
 ### Tier 1b: corporate Workspace, no agent platform
 
-For a Workspace company with no Gemini Enterprise agent platform, and a corporate account that has no Skills page yet. Two standard features, no code: a Gem per role (Seller, Manager) and Gemini Notebooks (method coach, company playbook, account rooms), with Drive for context and outputs. Guide: `corporate-workspace.md`.
+For a Workspace company with no Gemini Enterprise agent platform, and a corporate account that has no Skills page yet, or where you want Gems until skill sharing is confirmed. Two standard features, no code: a Gem per role (Seller, Manager) and Gemini Notebooks (method coach, company playbook, account rooms), with Drive for context and outputs. Guide: `corporate-workspace.md`.
 
 ### Tier 2: managed (admin-enabled)
 
